@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      #grand-section {
+        border: 2px solid skyblue;
+        padding: 20px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grand-section">
+      <h1>I am Here!</h1>
+      <ul id="father-section">
+        Starting Point Man
+        <li>hello Arafat</li>
+        <li>hello Arafat</li>
+        <li id="child-section">hello Arafat</li>
+        <li>hello Arafat</li>
+      </ul>
+    </div>
+
+    <script>
+      document
+        .getElementById("child-section")
+        .addEventListener("click", function () {
+          console.log("child-section clicked");
+        });
+      document
+        .getElementById("father-section")
+        .addEventListener("click", function (event) {
+          event.stopPropagation();
+          console.log("father-section clicked");
+        });
+      document
+        .getElementById("grand-section")
+        .addEventListener("click", function () {
+          console.log("grand-section clicked");
+        });
+    </script>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
